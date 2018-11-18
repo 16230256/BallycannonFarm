@@ -26,7 +26,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalViewHolder>{
 
-    private List<DocumentSnapshot> mMovieQuotesSnapshots = new ArrayList<>();
+    private List<DocumentSnapshot> mAnimalSnapshots = new ArrayList<>();
 
     public AnimalAdapter(){
         CollectionReference animalRef = FirebaseFirestore.getInstance().collection(Constants.COLLECTION_PATH);
@@ -39,7 +39,7 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalView
                     Log.w(Constants.TAG, "Listening failed!");
                     return;
                 }
-                mMovieQuotesSnapshots = queryDocumentSnapshots.getDocuments();
+                mAnimalSnapshots = queryDocumentSnapshots.getDocuments();
                 notifyDataSetChanged();
             }
         });
@@ -125,7 +125,7 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalView
 			itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    DocumentSnapshot ds = mMovieQuotesSnapshots.get(getAdapterPosition());
+                    DocumentSnapshot ds = mAnimalSnapshots.get(getAdapterPosition());
 
                     Context c = view.getContext();
                     Intent intent = new Intent(c, AnimalDetailActivity.class);
