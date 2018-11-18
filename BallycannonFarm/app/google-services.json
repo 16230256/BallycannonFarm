@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "203266833547",
+    "firebase_url": "https://myherdnialldeirdre.firebaseio.com",
+    "project_id": "myherdnialldeirdre",
+    "storage_bucket": "myherdnialldeirdre.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:203266833547:android:338c2efd3964662c",
+        "android_client_info": {
+          "package_name": "ie.ul.deirdreshanahan.ballycannonfarm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "203266833547-09e50oms5ui3tb2uk28gnajc9f6gq6uf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ie.ul.deirdreshanahan.ballycannonfarm",
+            "certificate_hash": "854079568a4d33ac9045f6697f51a4d5570ee06f"
+          }
+        },
+        {
+          "client_id": "203266833547-pleh17j676q2g2sg39g12n69sr7tfv26.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0ranowjgAY0ws00VxHQM7kOXcdmXDclE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "203266833547-pleh17j676q2g2sg39g12n69sr7tfv26.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
