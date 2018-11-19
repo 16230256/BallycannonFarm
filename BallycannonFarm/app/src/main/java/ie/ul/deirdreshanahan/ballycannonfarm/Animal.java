@@ -10,25 +10,25 @@ public class Animal {
     private float mRating;
     private Random random = new Random();
 
-    public static final HashMap<String, Integer> sFoodImageMap;
+    public static final HashMap<String, Integer> sAnimalImageMap;
     static {
-        sFoodImageMap = new HashMap<>();
-        sFoodImageMap.put("Jessica 1826", R.drawable.cow4);
-        sFoodImageMap.put("Lotto  1377", R.drawable.cow1);
-        sFoodImageMap.put("Nancy 853", R.drawable.cow3);
-        sFoodImageMap.put("Danny  1021", R.drawable.cow3);
+        sAnimalImageMap = new HashMap<>();
+        sAnimalImageMap.put("Jessica 1826", R.drawable.cow4);
+        sAnimalImageMap.put("Lotto  1377", R.drawable.cow1);
+        sAnimalImageMap.put("Nancy 853", R.drawable.cow3);
+        sAnimalImageMap.put("Danny  1021", R.drawable.cow3);
 
     }
 
     public Animal() {
-        mName = getRandomFoodName();
-        mImageResourceId = sFoodImageMap.get(mName);
+        mName = getRandomAnimalName();
+        mImageResourceId = sAnimalImageMap.get(mName);
         mRating = 0.0f;
     }
 
-    private String getRandomFoodName() {
-        Object[] foods = Animal.sFoodImageMap.keySet().toArray();
-        return (String)foods[random.nextInt(foods.length)];
+    private String getRandomAnimalName() {
+        Object[] animals = Animal.sAnimalImageMap.keySet().toArray();
+        return (String)animals[random.nextInt(animals.length)];
     }
 
     public String getName() {
