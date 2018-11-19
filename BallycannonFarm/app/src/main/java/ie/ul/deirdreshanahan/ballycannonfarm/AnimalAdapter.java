@@ -19,6 +19,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.koushikdutta.ion.Ion;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,8 +29,8 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalView
 
     private List<DocumentSnapshot> mAnimalSnapshots = new ArrayList<>();
 	
-	private List<Animal> mAnimals = new ArrayList<>();
-    private RecyclerView mRecyclerView;
+	//private List<Animal> mAnimals = new ArrayList<>();
+    //private RecyclerView mRecyclerView;
 
     public AnimalAdapter(){
         CollectionReference animalRef = FirebaseFirestore.getInstance().collection(Constants.COLLECTION_PATH);
@@ -59,11 +60,11 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalView
 
 
 
-    @Override
-    public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
-        super.onAttachedToRecyclerView(recyclerView);
-        mRecyclerView = recyclerView;
-    }
+   // @Override
+    //public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
+        //super.onAttachedToRecyclerView(recyclerView);
+        //mRecyclerView = recyclerView;
+    //}
 
 
 
@@ -71,32 +72,46 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalView
     public void onBindViewHolder(@NonNull AnimalViewHolder holder, int position) {
 
 
-        final Animal animal = mAnimals.get(position);
-        holder.mName.setText(animal.getName());
-        holder.mImageView.setImageResource(animal.getImageResourceId());
-        holder.mRatingBar.setRating(animal.getRating());
+        //final Animal animal = mAnimals.get(position);
+        //holder.mName.setText(animal.getName());
+        //holder.mImageView.setImageResource(animal.getImageResourceId());
+        //holder.mRatingBar.setRating(animal.getRating());
 
 
 
-		//DocumentSnapshot ds = mAnimalSnapshots.get(position);
-        //String tag = (String)ds.get(Constants.KEY_ANIMAL_TAG);
-        //String breed = (String)ds.get(Constants.KEY_BREED);
+		DocumentSnapshot ds = mAnimalSnapshots.get(position);
+        String tag = (String)ds.get(Constants.KEY_ANIMAL_TAG);
+        String breed = (String)ds.get(Constants.KEY_BREED);
 		//String photo = (String)ds.get(Constants.KEY_PHOTO);
 
-        //holder.mName.setText(tag);
+        holder.mName.setText(tag + " " + breed);
 
         
 
         //holder.mName.setText(breed);
 
+        // https://github.com/koush/ion
+        //Ion.with()
+        //if (ds.get(Constants.KEY_PHOTO) == Constants.EMPTY) {
+            Ion.with(holder.mImageView).load((randomImageUrl()));
+        //}
+        //else {
+            //Ion.with(holder.mImageView).load(photo);
+        //}
 
-        //Ion.with() for preview
-        //Ion.with(holder.mImageView).load(photo);
+
     }
 
+    public String randomImageUrl() {
+        String[] urls = new String[]{
+                "https://wallpaper.wiki/wp-content/uploads/2017/04/wallpaper.wiki-Cow-Background-Free-Download-PIC-WPB0011874.jpg",
+        };
+        return urls[(int) (Math.random() * urls.length)];
+    }
     @Override
     public int getItemCount() {
-        return mAnimals.size();
+        //return mAnimals.size();
+		return mAnimalSnapshots.size();
     }
 
     class AnimalViewHolder extends RecyclerView.ViewHolder {
@@ -125,8 +140,8 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalView
                 public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
                     if (fromUser) {
                         // Update this animal's rating
-                        Animal currentAnimal = mAnimals.get(getAdapterPosition());
-                        currentAnimal.setRating(rating);
+                        //Animal currentAnimal = mAnimals.get(getAdapterPosition());
+                        //currentAnimal.setRating(rating);
                     }
 
                 }
@@ -147,16 +162,16 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalView
     }
 	
 	public void addAnimal(){
-        mAnimals.add(0, new Animal());
-        notifyItemChanged(0);
-        notifyItemRangeChanged(0, mAnimals.size());
-        mRecyclerView.getLayoutManager().scrollToPosition(0);
+        //mAnimals.add(0, new Animal());
+        //notifyItemChanged(0);
+        //notifyItemRangeChanged(0, mAnimals.size());
+        //mRecyclerView.getLayoutManager().scrollToPosition(0);
     }
 
     private void deleteAnimal(int position){
-        mAnimals.remove(position);
-        notifyItemRemoved(position);
-        notifyItemRangeChanged(0, mAnimals.size());
+        //mAnimals.remove(position);
+        //notifyItemRemoved(position);
+        //notifyItemRangeChanged(0, mAnimals.size());
     }
 }
 
