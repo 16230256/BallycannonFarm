@@ -14,7 +14,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Animal Details"/>
+        android:text="Animal Tag"/>
 
     <TextView
         android:id="@+id/detail_quote"
