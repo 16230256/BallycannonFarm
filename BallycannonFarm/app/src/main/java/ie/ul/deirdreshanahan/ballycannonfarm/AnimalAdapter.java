@@ -105,6 +105,9 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalView
     public String randomImageUrl() {
         String[] urls = new String[]{
                 "https://wallpaper.wiki/wp-content/uploads/2017/04/wallpaper.wiki-Cow-Background-Free-Download-PIC-WPB0011874.jpg",
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Cow_female_black_white.jpg/220px-Cow_female_black_white.jpg",
+                "https://static1.squarespace.com/static/5670c8d31115e008c1d01b1d/t/583e53bbbe659429d12aa010/1480479725191/Ariana.jpg",
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/CH_cow_2_cropped.jpg/240px-CH_cow_2_cropped.jpg",
         };
         return urls[(int) (Math.random() * urls.length)];
     }
