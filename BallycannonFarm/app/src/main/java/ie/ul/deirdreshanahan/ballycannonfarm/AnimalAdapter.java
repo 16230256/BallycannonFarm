@@ -9,7 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RatingBar;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.google.firebase.firestore.CollectionReference;
@@ -120,13 +120,13 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalView
     class AnimalViewHolder extends RecyclerView.ViewHolder {
         private ImageView mImageView;
         private TextView mName;
-        private RatingBar mRatingBar;
+        private SeekBar mSeekBar;
 
-        public AnimalViewHolder(@NonNull View itemView) {
+         public  AnimalViewHolder(@NonNull View itemView) {
             super(itemView);
             mImageView = itemView.findViewById(R.id.animal_pic);
             mName = itemView.findViewById(R.id.name);
-            mRatingBar = itemView.findViewById(R.id.rating_bar);
+            mSeekBar = itemView.findViewById(R.id.seekBar);
 
             //TODO: Delete this animal on long press
             itemView.setOnLongClickListener(new View.OnLongClickListener() {
@@ -138,17 +138,24 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalView
             });
 
             // Done together, update the rating for this animal
-            mRatingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-                @Override
-                public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                    if (fromUser) {
-                        // Update this animal's rating
-                        //Animal currentAnimal = mAnimals.get(getAdapterPosition());
-                        //currentAnimal.setRating(rating);
-                    }
+            //mSeekBar.setOnSeekBarChangeListener();
+            mSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                int progressChangedValue = 0;
+
+                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                    progressChangedValue = progress;
+                }
+
+                public void onStartTrackingTouch(SeekBar seekBar) {
+                    // TODO Auto-generated method stub
+                }
+
+                public void onStopTrackingTouch(SeekBar seekBar) {
 
                 }
             });
+
+
 			
 			itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
