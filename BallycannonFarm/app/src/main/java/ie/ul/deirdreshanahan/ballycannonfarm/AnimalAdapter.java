@@ -27,6 +27,9 @@ import javax.annotation.Nullable;
 public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalViewHolder>{
 
     private List<DocumentSnapshot> mAnimalSnapshots = new ArrayList<>();
+	
+	private List<Animal> mAnimals = new ArrayList<>();
+    private RecyclerView mRecyclerView;
 
     public AnimalAdapter(){
         CollectionReference animalRef = FirebaseFirestore.getInstance().collection(Constants.COLLECTION_PATH);
@@ -54,8 +57,7 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalView
         return new AnimalViewHolder(itemView);
     }
 
-    private List<Animal> mAnimals = new ArrayList<>();
-    private RecyclerView mRecyclerView;
+
 
     @Override
     public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
@@ -63,25 +65,33 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalView
         mRecyclerView = recyclerView;
     }
 
-    public void addAnimal(){
-        mAnimals.add(0, new Animal());
-        notifyItemChanged(0);
-        notifyItemRangeChanged(0, mAnimals.size());
-        mRecyclerView.getLayoutManager().scrollToPosition(0);
-    }
 
-    private void deleteAnimal(int position){
-        mAnimals.remove(position);
-        notifyItemRemoved(position);
-        notifyItemRangeChanged(0, mAnimals.size());
-    }
 
     @Override
     public void onBindViewHolder(@NonNull AnimalViewHolder holder, int position) {
+
+
         final Animal animal = mAnimals.get(position);
         holder.mName.setText(animal.getName());
         holder.mImageView.setImageResource(animal.getImageResourceId());
         holder.mRatingBar.setRating(animal.getRating());
+
+
+
+		//DocumentSnapshot ds = mAnimalSnapshots.get(position);
+        //String tag = (String)ds.get(Constants.KEY_ANIMAL_TAG);
+        //String breed = (String)ds.get(Constants.KEY_BREED);
+		//String photo = (String)ds.get(Constants.KEY_PHOTO);
+
+        //holder.mName.setText(tag);
+
+        
+
+        //holder.mName.setText(breed);
+
+
+        //Ion.with() for preview
+        //Ion.with(holder.mImageView).load(photo);
     }
 
     @Override
@@ -134,6 +144,19 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalView
                 }
             });
         }
+    }
+	
+	public void addAnimal(){
+        mAnimals.add(0, new Animal());
+        notifyItemChanged(0);
+        notifyItemRangeChanged(0, mAnimals.size());
+        mRecyclerView.getLayoutManager().scrollToPosition(0);
+    }
+
+    private void deleteAnimal(int position){
+        mAnimals.remove(position);
+        notifyItemRemoved(position);
+        notifyItemRangeChanged(0, mAnimals.size());
     }
 }
 
