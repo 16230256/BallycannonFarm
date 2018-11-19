@@ -15,7 +15,7 @@
         <TextView
             android:id="@+id/itemview_quote"
             android:maxLines="1"
-            android:text="Quote goes here"
+            android:text="Tag number goes here"
             android:textColor="@android:color/black"
             android:textSize="20sp"
             android:layout_width="match_parent"
@@ -25,7 +25,7 @@
         <TextView
             android:id="@+id/itemview_movie"
             android:gravity="right"
-            android:text="Movie goes here"
+            android:text="Enter Animal Breed here"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>
