@@ -77,6 +77,9 @@ public class MainActivity extends AppCompatActivity {
                 mq.put(Constants.KEY_ANIMAL_TAG, quoteEditText.getText().toString());
                 mq.put(Constants.KEY_BREED, movieEditText.getText().toString());
                 mq.put(Constants.KEY_CREATED, new Date());
+                //DS CODE
+                mq.put(Constants.KEY_USER_ID, FirebaseAuth.getInstance().getCurrentUser().getUid());
+                //DSEND
 
                 FirebaseFirestore.getInstance().collection(Constants.COLLECTION_PATH).add(mq);
 
