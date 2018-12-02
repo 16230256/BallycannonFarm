@@ -8,12 +8,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Date;
@@ -39,15 +37,15 @@ public class MainActivity extends AppCompatActivity {
         animalAdapter.addAnimal();
 
 //temp test of auth
-        FirebaseAuth auth = FirebaseAuth.getInstance();
-        //auth.signout()  //if you  want to sign back in as someone other anonymous
-        FirebaseUser currentUser = auth.getCurrentUser();
-        if (currentUser == null) {
-            Log.d(Constants.TAG, "there is no user . Need to sign in!");
-            auth.signInAnonymously();
-        }else  {
-            Log.d(Constants.TAG, "there is a user . All set!");
-        }
+//        FirebaseAuth auth = FirebaseAuth.getInstance();
+//        //auth.signout()  //if you  want to sign back in as someone other anonymous
+//        FirebaseUser currentUser = auth.getCurrentUser();
+//        if (currentUser == null) {
+//            Log.d(Constants.TAG, "there is no user . Need to sign in!");
+//            auth.signInAnonymously();
+//        }else  {
+//            Log.d(Constants.TAG, "there is a user . All set!");
+//        }
 //end of test for Auth
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
