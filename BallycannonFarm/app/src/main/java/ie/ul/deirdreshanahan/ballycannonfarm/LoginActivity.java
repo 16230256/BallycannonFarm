@@ -56,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
                     });
         }
     }
-    public void handleSingUp(View view){
+    public void handleSignUp(View view){
         //     Toast.makeText(this, "Sing Up", Toast.LENGTH_LONG).show();
         String email = mEmailEditText.getText().toString();
         String password = mPasswordEditText.getText().toString();
