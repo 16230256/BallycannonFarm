@@ -104,6 +104,20 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalView
 
     public String randomImageUrl() {
         String[] urls = new String[]{
+                // From Deirdre's Farm
+                //"https://drive.google.com/drive/folders/1gsUj1fbnj3OYx33vqYzqyzrJSjPwrwBE", // Alicia
+                //"https://drive.google.com/file/d/1MlXlxwn4FQ5O_t4PXqLgJTToSUPIrQQx/view",      // Ballycannon Holstein
+                //"https://drive.google.com/open?id=1q_S1X5tzOY2n7FyKh4Ttism_qOOnrGdm",       // Blackie
+                //"https://drive.google.com/open?id=1RWEnCGbA9NqNnfj09fk6ZIUs36MDE8Z5",       // Caroline
+                //"https://drive.google.com/open?id=15CiPw09Y2mx3WtHxhraWWuTvS9TMOLoq",       // Dude
+                //"https://drive.google.com/open?id=14V1GKOmRujLiktzwt5o9Q2jGimj-oWLL",       // Josie
+                //"https://drive.google.com/open?id=1sriPKX37rEJKdyUZOmflrzJqDTcdXoDU",       // Mags
+                //"https://drive.google.com/open?id=1SMY_qeQnNeS_9WQTt0YzUciK7ptj4w1W",       /// Mistake
+                //"https://drive.google.com/open?id=1D54rqmil9qLtf_xYb75l-nGl2-J55NNp",       // Rosie
+                //"https://drive.google.com/open?id=1lqxrSnN_Ixi8drREYSDV10iw25EncBtn",       // ShuttleRita
+                //"https://drive.google.com/open?id=1CnmcA-YDQen65g9b5sNWpeyBlSeAGvHY",       // Tina
+                //"https://drive.google.com/file/d/1lqxrSnN_Ixi8drREYSDV10iw25EncBtn/view",
+
                 "https://wallpaper.wiki/wp-content/uploads/2017/04/wallpaper.wiki-Cow-Background-Free-Download-PIC-WPB0011874.jpg",
                 "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Cow_female_black_white.jpg/220px-Cow_female_black_white.jpg",
                 "https://static1.squarespace.com/static/5670c8d31115e008c1d01b1d/t/583e53bbbe659429d12aa010/1480479725191/Ariana.jpg",
