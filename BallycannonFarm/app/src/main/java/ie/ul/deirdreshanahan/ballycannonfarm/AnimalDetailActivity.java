@@ -84,7 +84,10 @@ public class AnimalDetailActivity extends AppCompatActivity {
 
     public String randomImageUrl() {
         String[] urls = new String[]{
-                "https://wallpaper.wiki/wp-content/uploads/2017/04/wallpaper.wiki-Cow-Background-Free-Download-PIC-WPB0011874.jpg",
+                //"https://wallpaper.wiki/wp-content/uploads/2017/04/wallpaper.wiki-Cow-Background-Free-Download-PIC-WPB0011874.jpg",
+                "https://firebasestorage.googleapis.com/v0/b/myherdnialldeirdre.appspot.com/o/Alicia.jpeg?alt=media&token=dbf597b8-b2f6-48bf-b981-16f72ff925b8\n",
+
+
         };
         return urls[(int) (Math.random() * urls.length)];
     }

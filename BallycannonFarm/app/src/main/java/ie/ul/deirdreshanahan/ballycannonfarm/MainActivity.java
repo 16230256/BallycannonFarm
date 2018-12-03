@@ -17,10 +17,17 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+
+
+
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        //private StorageReference mStorageRef;
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -47,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
 //            Log.d(Constants.TAG, "there is a user . All set!");
 //        }
 //end of test for Auth
+
+        //mStorageRef = FirebaseStorage.getInstance().getReference();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
