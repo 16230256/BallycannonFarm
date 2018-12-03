@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -25,6 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Nullable;
+
 public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalViewHolder>{
 
     private List<DocumentSnapshot> mAnimalSnapshots = new ArrayList<>();
@@ -35,16 +37,22 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalView
     public AnimalAdapter(){
         CollectionReference animalRef = FirebaseFirestore.getInstance().collection(Constants.COLLECTION_PATH);
 
-        animalRef.orderBy(Constants.KEY_CREATED, Query.Direction.DESCENDING).limit(50)
+        //animalRef.orderBy(Constants.KEY_CREATED, Query.Direction.DESCENDING).limit(50)
+        //        .addSnapshotListener(new EventListener<QuerySnapshot>() {
+
+        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        animalRef.whereEqualTo(Constants.KEY_USER_ID, uid)
+                .orderBy(Constants.KEY_CREATED, Query.Direction.DESCENDING).limit(50)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
-            @Override
-            public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
-                if (e != null) {
-                    Log.w(Constants.TAG, "Listening failed!");
-                    return;
-                }
-                mAnimalSnapshots = queryDocumentSnapshots.getDocuments();
-                notifyDataSetChanged();
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
+                        if (e != null) {
+                            Log.w(Constants.TAG, "Listening failed!");
+                            return;
+                        }
+                        mAnimalSnapshots = queryDocumentSnapshots.getDocuments();
+                        notifyDataSetChanged();
             }
         });
     }
