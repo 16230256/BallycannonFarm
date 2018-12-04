@@ -93,7 +93,9 @@ public class AnimalDetailActivity extends AppCompatActivity {
                 "https://firebasestorage.googleapis.com/v0/b/myherdnialldeirdre.appspot.com/o/Josie1.jpeg?alt=media&token=a0b610c7-b30e-4c5b-9c26-2a45f7085eae",
                 "https://firebasestorage.googleapis.com/v0/b/myherdnialldeirdre.appspot.com/o/Mags.jpeg?alt=media&token=1265da40-0c3d-49a5-82f1-082cbab3258a",
                 "https://firebasestorage.googleapis.com/v0/b/myherdnialldeirdre.appspot.com/o/Kerry.jpeg?alt=media&token=b4a7be31-455e-4290-ba56-384ee1bbc2ba",
+                "https://firebasestorage.googleapis.com/v0/b/myherdnialldeirdre.appspot.com/o/Rosie.jpeg?alt=media&token=3a5e406f-ef08-4c61-94c5-1155e2104014",
                 "https://firebasestorage.googleapis.com/v0/b/myherdnialldeirdre.appspot.com/o/Tina.jpeg?alt=media&token=ab5be70a-c290-4e39-9fcd-ac72b460edfa",
+                "https://firebasestorage.googleapis.com/v0/b/myherdnialldeirdre.appspot.com/o/ShuttleRita.jpg?alt=media&token=f0c2f6e7-bec6-4b2b-85d4-f1b352527c87",
 
 
         };
