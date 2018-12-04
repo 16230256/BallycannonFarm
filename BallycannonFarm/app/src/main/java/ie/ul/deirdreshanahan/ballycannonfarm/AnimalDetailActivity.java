@@ -85,7 +85,15 @@ public class AnimalDetailActivity extends AppCompatActivity {
     public String randomImageUrl() {
         String[] urls = new String[]{
                 //"https://wallpaper.wiki/wp-content/uploads/2017/04/wallpaper.wiki-Cow-Background-Free-Download-PIC-WPB0011874.jpg",
-                "https://firebasestorage.googleapis.com/v0/b/myherdnialldeirdre.appspot.com/o/Alicia.jpeg?alt=media&token=dbf597b8-b2f6-48bf-b981-16f72ff925b8\n",
+                "https://firebasestorage.googleapis.com/v0/b/myherdnialldeirdre.appspot.com/o/Alicia.jpeg?alt=media&token=dbf597b8-b2f6-48bf-b981-16f72ff925b8",
+                "https://firebasestorage.googleapis.com/v0/b/myherdnialldeirdre.appspot.com/o/Ballycannon%20Holstein.jpeg?alt=media&token=6500f5d4-efde-483d-bf01-ec848a446223",
+                "https://firebasestorage.googleapis.com/v0/b/myherdnialldeirdre.appspot.com/o/Blackie.jpeg?alt=media&token=47d0738a-03e0-4bfa-be99-d7a341327e89",
+                "https://firebasestorage.googleapis.com/v0/b/myherdnialldeirdre.appspot.com/o/Caroline.jpeg?alt=media&token=d26f1b9e-7b01-41ff-a19c-2907ed878d1b",
+                "https://firebasestorage.googleapis.com/v0/b/myherdnialldeirdre.appspot.com/o/Dude.jpg?alt=media&token=2eb9d720-7b23-4613-9ee8-c7f57af56fca",
+                "https://firebasestorage.googleapis.com/v0/b/myherdnialldeirdre.appspot.com/o/Josie1.jpeg?alt=media&token=a0b610c7-b30e-4c5b-9c26-2a45f7085eae",
+                "https://firebasestorage.googleapis.com/v0/b/myherdnialldeirdre.appspot.com/o/Mags.jpeg?alt=media&token=1265da40-0c3d-49a5-82f1-082cbab3258a",
+                "https://firebasestorage.googleapis.com/v0/b/myherdnialldeirdre.appspot.com/o/Kerry.jpeg?alt=media&token=b4a7be31-455e-4290-ba56-384ee1bbc2ba",
+                "https://firebasestorage.googleapis.com/v0/b/myherdnialldeirdre.appspot.com/o/Tina.jpeg?alt=media&token=ab5be70a-c290-4e39-9fcd-ac72b460edfa",
 
 
         };
