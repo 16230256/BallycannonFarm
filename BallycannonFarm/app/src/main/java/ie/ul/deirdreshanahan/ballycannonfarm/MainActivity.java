@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -115,6 +116,17 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_signout:
                 FirebaseAuth.getInstance().signOut();
                 finish();
+                return true;
+
+            case R.id.action_take_photo:
+
+                Toast.makeText(MainActivity.this, "Taking photo!", Toast.LENGTH_SHORT).show();
+
+                return true;
+
+            case R.id.action_email:
+
+                Toast.makeText(MainActivity.this, "Sending email!", Toast.LENGTH_SHORT).show();
                 return true;
         }
         return super.onOptionsItemSelected(item);

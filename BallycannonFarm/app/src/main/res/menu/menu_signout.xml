@@ -2,6 +2,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="ie.ul.deirdreshanahan.ballycannonfarm.MainActivity">
+
+
+    <item
+        android:id="@+id/action_email"
+        android:orderInCategory="100"
+        android:title="Send Email"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_take_photo"
+        android:orderInCategory="100"
+        android:title="Take Photo"
+        app:showAsAction="never" />
+
     <item
         android:id="@+id/action_signout"
         android:orderInCategory="100"
