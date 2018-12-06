@@ -9,17 +9,21 @@
         android:orderInCategory="100"
         android:title="Send Email"
         app:showAsAction="ifRoom"
+        android:icon="@android:drawable/ic_dialog_email"
         />
 
     <item
         android:id="@+id/action_take_photo"
         android:orderInCategory="100"
         android:title="Take Photo"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="ifRoom"
+        android:icon="@android:drawable/ic_menu_camera"
+        />
 
     <item
         android:id="@+id/action_signout"
         android:orderInCategory="100"
         android:title="Sign out"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="never"
+        />
 </menu>
