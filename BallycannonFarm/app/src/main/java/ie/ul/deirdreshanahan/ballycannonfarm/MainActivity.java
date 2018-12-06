@@ -162,11 +162,12 @@ public class MainActivity extends AppCompatActivity {
         return image;
     }
 
-    public void composeEmail(String[] addresses, String subject) {
+    public void composeEmail(String[] addresses, String subject, String body) {
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:")); // only email apps should handle this
         intent.putExtra(Intent.EXTRA_EMAIL, addresses);
         intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        intent.putExtra(Intent.ACTION_ANSWER, body);
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }
@@ -184,7 +185,11 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.action_email:
 
-                composeEmail(new String[]{"departmentofargriculture@gov.ie"},"Register new animal births");
+                composeEmail(new String[]{"departmentofargriculture@gov.ie"},"Register new animal births",
+                        "These are the new births:" +
+                                "1111111" +
+                                "2222222" +
+                                "3333333 ");
 
                 Toast.makeText(MainActivity.this, "Sending email!", Toast.LENGTH_SHORT).show();
                 return true;

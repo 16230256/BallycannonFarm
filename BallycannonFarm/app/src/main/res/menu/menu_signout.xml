@@ -8,17 +8,18 @@
         android:id="@+id/action_email"
         android:orderInCategory="100"
         android:title="Send Email"
-        app:showAsAction="never" />
+        app:showAsAction="ifRoom"
+        />
 
     <item
         android:id="@+id/action_take_photo"
         android:orderInCategory="100"
         android:title="Take Photo"
-        app:showAsAction="never" />
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/action_signout"
         android:orderInCategory="100"
         android:title="Sign out"
-        app:showAsAction="never" />
+        app:showAsAction="ifRoom" />
 </menu>
