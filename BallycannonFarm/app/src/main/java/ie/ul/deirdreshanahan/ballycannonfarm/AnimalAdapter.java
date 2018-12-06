@@ -173,7 +173,7 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalView
             //mSeekBar.setOnSeekBarChangeListener();
             mSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                 int progressChangedValue = 55;
-                
+
 
                 public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                     progressChangedValue = progress;
