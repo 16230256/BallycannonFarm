@@ -1,7 +1,10 @@
 package ie.ul.deirdreshanahan.ballycannonfarm;
 
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -140,6 +144,28 @@ public class AnimalDetailActivity extends AppCompatActivity {
         return true;
     }
 
+    public void composeEmail(String[] addresses, String subject, String body) {
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+        intent.putExtra(Intent.EXTRA_EMAIL, addresses);
+        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        intent.putExtra(Intent.ACTION_ANSWER, body);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+    }
+
+
+    static final int REQUEST_IMAGE_CAPTURE = 1;
+
+    private void dispatchTakePictureIntent() {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+        }
+    }
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -148,7 +174,24 @@ public class AnimalDetailActivity extends AppCompatActivity {
                 mDocRef.delete();
                 finish();
                 return true;
+            case R.id.action_email:
+
+                composeEmail(new String[]{"departmentofargriculture@gov.ie"},"Register new animal births",
+                        "These are the new births:" +
+                                "1111111" +
+                                "2222222" +
+                                "3333333 ");
+
+                ///Toast.makeText(AnimalDetailActivity.this, "Sending email!", Toast.LENGTH_SHORT).show();
+                return true;
+
+            case R.id.action_take_photo:
+
+                ///Toast.makeText(AnimalDetailActivity.this, "Taking photo!", Toast.LENGTH_SHORT).show();
+                dispatchTakePictureIntent();
+                return true;
         }
+
         return super.onOptionsItemSelected(item);
     }
 }
