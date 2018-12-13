@@ -34,8 +34,8 @@ public class AnimalDetailActivity extends AppCompatActivity {
     private DocumentReference mDocRef;
     private DocumentSnapshot mDocSnapshot;
 
-    private TextView mQuoteTextView;
-    private TextView mMovieTextView;
+    private TextView mTagTextView;
+    private TextView mBreedTextView;
     private ImageView mPhotoImageView;
 
     @Override
@@ -44,12 +44,12 @@ public class AnimalDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_animal_detail);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        mQuoteTextView = findViewById(R.id.detail_tag);
-        mMovieTextView = findViewById(R.id.detail_breed);
+        mTagTextView = findViewById(R.id.detail_tag);
+        mBreedTextView = findViewById(R.id.detail_breed);
         mPhotoImageView = findViewById(R.id.detail_photo);
         String docId = getIntent().getStringExtra(Constants.EXTRA_DOC_ID);
 
-        //mQuoteTextView.setText(docId);
+        //mTagTextView.setText(docId);
         mDocRef = FirebaseFirestore.getInstance()
                 .collection(Constants.COLLECTION_PATH).document(docId);
         mDocRef.addSnapshotListener(new EventListener<DocumentSnapshot>() {
@@ -61,8 +61,8 @@ public class AnimalDetailActivity extends AppCompatActivity {
                 }
                 if (documentSnapshot.exists()){
                     mDocSnapshot = documentSnapshot;
-                    mQuoteTextView.setText((String)documentSnapshot.get(Constants.KEY_ANIMAL_TAG));
-                    mMovieTextView.setText((String)documentSnapshot.get(Constants.KEY_BREED));
+                    mTagTextView.setText((String)documentSnapshot.get(Constants.KEY_ANIMAL_TAG));
+                    mBreedTextView.setText((String)documentSnapshot.get(Constants.KEY_BREED));
 
                     // https://github.com/koush/ion
                     //Ion.with()
