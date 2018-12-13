@@ -91,8 +91,9 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalView
         String tag = (String)ds.get(Constants.KEY_ANIMAL_TAG);
         String breed = (String)ds.get(Constants.KEY_BREED);
 		String photo = (String)ds.get(Constants.KEY_PHOTO);
+		String nickname = (String)ds.get(Constants.KEY_NAME);
 
-        holder.mName.setText(tag + " " + breed);
+        holder.mName.setText(tag + " " + breed + " " + nickname);
 
         
 

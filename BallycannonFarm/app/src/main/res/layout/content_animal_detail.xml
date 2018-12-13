@@ -17,7 +17,7 @@
         android:text="Animal Tag"/>
 
     <TextView
-        android:id="@+id/detail_quote"
+        android:id="@+id/detail_tag"
         android:text="Animal Tag goes here"
         android:textColor="@android:color/black"
         android:textSize="20sp"
@@ -32,7 +32,7 @@
         android:text="Animal Breed"/>
 
     <TextView
-        android:id="@+id/detail_movie"
+        android:id="@+id/detail_breed"
         android:text="Enter Animal Breed here"
         android:textColor="@android:color/black"
         android:textSize="16sp"
@@ -47,7 +47,7 @@
         android:text="Animal Photo"/>
 	
     <ImageView
-        android:id="@+id/detail_image"
+        android:id="@+id/detail_photo"
         android:layout_width="match_parent"
         android:layout_height="319dp" />
 

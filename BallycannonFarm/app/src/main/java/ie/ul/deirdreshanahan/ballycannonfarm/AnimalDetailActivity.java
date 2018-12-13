@@ -44,9 +44,9 @@ public class AnimalDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_animal_detail);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        mQuoteTextView = findViewById(R.id.detail_quote);
-        mMovieTextView = findViewById(R.id.detail_movie);
-        mPhotoImageView = findViewById(R.id.detail_image);
+        mQuoteTextView = findViewById(R.id.detail_tag);
+        mMovieTextView = findViewById(R.id.detail_breed);
+        mPhotoImageView = findViewById(R.id.detail_photo);
         String docId = getIntent().getStringExtra(Constants.EXTRA_DOC_ID);
 
         //mQuoteTextView.setText(docId);
@@ -110,12 +110,15 @@ public class AnimalDetailActivity extends AppCompatActivity {
         View view = getLayoutInflater().inflate(R.layout.animal_dialog, null, false );
         builder.setView(view);
         builder.setTitle("Edit this Animal Details");
-        final TextView quoteEditText = view.findViewById(R.id.dialog_tag_edittext);
-        final TextView movieEditText = view.findViewById(R.id.dialog_breed_edittext);
+        final TextView tagEditText = view.findViewById(R.id.dialog_tag_edittext);
+        final TextView breedEditText = view.findViewById(R.id.dialog_breed_edittext);
+        final TextView nicknameEditText = view.findViewById(R.id.dialog_nickname_edittext);
+        final TextView healthEditText = view.findViewById(R.id.dialog_health_edittext);
 
-        quoteEditText.setText((String)mDocSnapshot.get(Constants.KEY_ANIMAL_TAG));
-        movieEditText.setText((String)mDocSnapshot.get(Constants.KEY_BREED));
-
+        tagEditText.setText((String)mDocSnapshot.get(Constants.KEY_ANIMAL_TAG));
+        breedEditText.setText((String)mDocSnapshot.get(Constants.KEY_BREED));
+        nicknameEditText.setText((String)mDocSnapshot.get(Constants.KEY_NAME));
+        healthEditText.setText((String)mDocSnapshot.get(Constants.KEY_HEALTH));
 
         builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
             @Override
@@ -123,8 +126,10 @@ public class AnimalDetailActivity extends AppCompatActivity {
 
                 Map<String, Object> mq = new HashMap<>();
 
-                mq.put(Constants.KEY_ANIMAL_TAG, quoteEditText.getText().toString());
-                mq.put(Constants.KEY_BREED, movieEditText.getText().toString());
+                mq.put(Constants.KEY_ANIMAL_TAG, tagEditText.getText().toString());
+                mq.put(Constants.KEY_BREED, breedEditText.getText().toString());
+                mq.put(Constants.KEY_NAME, nicknameEditText.getText().toString());
+                mq.put(Constants.KEY_HEALTH, healthEditText.getText().toString());
                 mq.put(Constants.KEY_CREATED, new Date());
                 mDocRef.update(mq);
             }

@@ -70,7 +70,10 @@ public class MainActivity extends AppCompatActivity {
         builder.setTitle("Add an animal");
         final TextView quoteEditText = view.findViewById(R.id.dialog_tag_edittext);
         final TextView movieEditText = view.findViewById(R.id.dialog_breed_edittext);
+        final TextView nicknameEditText = view.findViewById(R.id.dialog_nickname_edittext);
+        final TextView healthEditText = view.findViewById(R.id.dialog_health_edittext);
         final TextView photoEditText = view.findViewById(R.id.dialog_photo_edittext);
+
 
         builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
             @Override
@@ -80,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
 
                 mq.put(Constants.KEY_ANIMAL_TAG, quoteEditText.getText().toString());
                 mq.put(Constants.KEY_BREED, movieEditText.getText().toString());
+                mq.put(Constants.KEY_NAME, nicknameEditText.getText().toString());
+                mq.put(Constants.KEY_HEALTH, healthEditText.getText().toString());
                 mq.put(Constants.KEY_PHOTO, photoEditText.getText().toString());
                 mq.put(Constants.KEY_CREATED, new Date());
 
