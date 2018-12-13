@@ -160,6 +160,8 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalView
             mName = itemView.findViewById(R.id.name);
             mSeekBar = itemView.findViewById(R.id.seekBar);
 
+             mSeekBar.setProgress((int)(Math.random() * 100));
+
             //TODO: Delete this animal on long press
             itemView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
@@ -172,11 +174,12 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalView
             // Done together, update the rating for this animal
             //mSeekBar.setOnSeekBarChangeListener();
             mSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-                int progressChangedValue = 55;
+                int progressChangedValue;
 
 
                 public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                    progressChangedValue = 55;
+                    progressChangedValue = progress;
+                    mSeekBar.setProgress(progress);
                 }
 
                 public void onStartTrackingTouch(SeekBar seekBar) {
@@ -204,12 +207,7 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalView
         }
     }
 	
-	public void addAnimal(){
-        //mAnimals.add(0, new Animal());
-        //notifyItemChanged(0);
-        //notifyItemRangeChanged(0, mAnimals.size());
-        //mRecyclerView.getLayoutManager().scrollToPosition(0);
-    }
+
 
     private void deleteAnimal(int position){
         //mAnimals.remove(position);

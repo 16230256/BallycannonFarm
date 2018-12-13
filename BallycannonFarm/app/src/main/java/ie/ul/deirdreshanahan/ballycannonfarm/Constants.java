@@ -6,6 +6,7 @@ public class Constants {
     public static final String COLLECTION_PATH = "MyHerdNiallDeirdre";
     public static final String KEY_ANIMAL_TAG = "tag";
     public static final String KEY_BREED = "breed";
+    public static final String KEY_HEALTH = "health";
 	public static final String KEY_DAM_NUMBER = "dam";
 	public static final String KEY_DOB = "dob";
 	public static final String KEY_NAME = "name";
