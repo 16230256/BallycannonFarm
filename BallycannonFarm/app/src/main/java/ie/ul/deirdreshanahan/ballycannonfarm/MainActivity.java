@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        //private StorageReference mStorageRef;
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -53,23 +52,8 @@ public class MainActivity extends AppCompatActivity {
         final AnimalAdapter animalAdapter = new AnimalAdapter();
         recyclerView.setAdapter(animalAdapter);
 
-        animalAdapter.addAnimal();
-        animalAdapter.addAnimal();
-        animalAdapter.addAnimal();
 
-//temp test of auth
-//        FirebaseAuth auth = FirebaseAuth.getInstance();
-//        //auth.signout()  //if you  want to sign back in as someone other anonymous
-//        FirebaseUser currentUser = auth.getCurrentUser();
-//        if (currentUser == null) {
-//            Log.d(Constants.TAG, "there is no user . Need to sign in!");
-//            auth.signInAnonymously();
-//        }else  {
-//            Log.d(Constants.TAG, "there is a user . All set!");
-//        }
-//end of test for Auth
 
-        //mStorageRef = FirebaseStorage.getInstance().getReference();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -101,9 +85,9 @@ public class MainActivity extends AppCompatActivity {
                 mq.put(Constants.KEY_BREED, movieEditText.getText().toString());
                 mq.put(Constants.KEY_PHOTO, photoEditText.getText().toString());
                 mq.put(Constants.KEY_CREATED, new Date());
-                //DS CODE
+
                 mq.put(Constants.KEY_USER_ID, FirebaseAuth.getInstance().getCurrentUser().getUid());
-                //DSEND
+
 
                 FirebaseFirestore.getInstance().collection(Constants.COLLECTION_PATH).add(mq);
 
