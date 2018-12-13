@@ -68,8 +68,8 @@ public class MainActivity extends AppCompatActivity {
         View view = getLayoutInflater().inflate(R.layout.animal_dialog, null, false );
         builder.setView(view);
         builder.setTitle("Add an animal");
-        final TextView quoteEditText = view.findViewById(R.id.dialog_tag_edittext);
-        final TextView movieEditText = view.findViewById(R.id.dialog_breed_edittext);
+        final TextView tagEditText = view.findViewById(R.id.dialog_tag_edittext);
+        final TextView breedEditText = view.findViewById(R.id.dialog_breed_edittext);
         final TextView nicknameEditText = view.findViewById(R.id.dialog_nickname_edittext);
         final TextView healthEditText = view.findViewById(R.id.dialog_health_edittext);
         final TextView photoEditText = view.findViewById(R.id.dialog_photo_edittext);
@@ -81,8 +81,8 @@ public class MainActivity extends AppCompatActivity {
 
                 Map<String, Object> mq = new HashMap<>();
 
-                mq.put(Constants.KEY_ANIMAL_TAG, quoteEditText.getText().toString());
-                mq.put(Constants.KEY_BREED, movieEditText.getText().toString());
+                mq.put(Constants.KEY_ANIMAL_TAG, tagEditText.getText().toString());
+                mq.put(Constants.KEY_BREED, breedEditText.getText().toString());
                 mq.put(Constants.KEY_NAME, nicknameEditText.getText().toString());
                 mq.put(Constants.KEY_HEALTH, healthEditText.getText().toString());
                 mq.put(Constants.KEY_PHOTO, photoEditText.getText().toString());

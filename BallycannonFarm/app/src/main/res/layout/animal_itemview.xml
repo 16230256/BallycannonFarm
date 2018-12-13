@@ -13,7 +13,7 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/itemview_quote"
+            android:id="@+id/itemview_tag"
             android:maxLines="1"
             android:text="Tag number goes here"
             android:textColor="@android:color/black"
@@ -23,7 +23,7 @@
 
 
         <TextView
-            android:id="@+id/itemview_movie"
+            android:id="@+id/itemview_breed"
             android:gravity="right"
             android:text="Enter Animal Breed here"
             android:layout_width="match_parent"
