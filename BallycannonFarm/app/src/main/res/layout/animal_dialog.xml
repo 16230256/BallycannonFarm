@@ -6,18 +6,43 @@
     android:padding="8dp">
 
     <EditText
-        android:id="@+id/dialog_quote_edittext"
+        android:id="@+id/dialog_tag_edittext"
         android:hint="Enter a Tag Number here"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <EditText
-        android:id="@+id/dialog_movie_edittext"
+        android:id="@+id/dialog_nickname_edittext"
+        android:hint="Enter a Nickname here"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/dialog_dob_edittext"
+        android:hint="Enter Date of Birth here"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/dialog_sex_edittext"
+        android:hint="Enter a animal sex here"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/dialog_dam_edittext"
+        android:hint="Enter a Dam Number here"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/dialog_breed_edittext"
         android:hint="Enter the Animal Breed here"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <EditText
         android:id="@+id/dialog_photo_edittext"
         android:hint="Enter the Animal Photo Url here"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/dialog_health_edittext"
+        android:hint="Enter the Animal Health Percentile here"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

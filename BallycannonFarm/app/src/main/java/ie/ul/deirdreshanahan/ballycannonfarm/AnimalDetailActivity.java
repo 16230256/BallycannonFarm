@@ -15,7 +15,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -111,8 +110,8 @@ public class AnimalDetailActivity extends AppCompatActivity {
         View view = getLayoutInflater().inflate(R.layout.animal_dialog, null, false );
         builder.setView(view);
         builder.setTitle("Edit this Animal Details");
-        final TextView quoteEditText = view.findViewById(R.id.dialog_quote_edittext);
-        final TextView movieEditText = view.findViewById(R.id.dialog_movie_edittext);
+        final TextView quoteEditText = view.findViewById(R.id.dialog_tag_edittext);
+        final TextView movieEditText = view.findViewById(R.id.dialog_breed_edittext);
 
         quoteEditText.setText((String)mDocSnapshot.get(Constants.KEY_ANIMAL_TAG));
         movieEditText.setText((String)mDocSnapshot.get(Constants.KEY_BREED));

@@ -18,8 +18,6 @@ import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -60,10 +58,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 showAddDialog();
-
-
             }
         });
+
     }
 
     private void showAddDialog() {
@@ -71,8 +68,8 @@ public class MainActivity extends AppCompatActivity {
         View view = getLayoutInflater().inflate(R.layout.animal_dialog, null, false );
         builder.setView(view);
         builder.setTitle("Add an animal");
-        final TextView quoteEditText = view.findViewById(R.id.dialog_quote_edittext);
-        final TextView movieEditText = view.findViewById(R.id.dialog_movie_edittext);
+        final TextView quoteEditText = view.findViewById(R.id.dialog_tag_edittext);
+        final TextView movieEditText = view.findViewById(R.id.dialog_breed_edittext);
         final TextView photoEditText = view.findViewById(R.id.dialog_photo_edittext);
 
         builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
