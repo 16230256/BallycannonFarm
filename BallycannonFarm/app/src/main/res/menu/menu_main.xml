@@ -10,13 +10,13 @@
         android:icon="@android:drawable/ic_menu_delete"
         app:showAsAction="always" />
 
-    <item
+<!--    <item
         android:id="@+id/action_email"
         android:orderInCategory="100"
         android:title="Send Email"
         app:showAsAction="ifRoom"
         android:icon="@android:drawable/ic_dialog_email"
-        />
+        />-->
 
     <item
         android:id="@+id/action_take_photo"
@@ -26,9 +26,9 @@
         android:icon="@android:drawable/ic_menu_camera"
         />
 
-    <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
+    <!--<item-->
+        <!--android:id="@+id/action_settings"-->
+        <!--android:orderInCategory="100"-->
+        <!--android:title="@string/action_settings"-->
+        <!--app:showAsAction="never" />-->
 </menu>

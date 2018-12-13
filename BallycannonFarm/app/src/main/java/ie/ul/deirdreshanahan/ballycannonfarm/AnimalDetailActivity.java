@@ -67,12 +67,12 @@ public class AnimalDetailActivity extends AppCompatActivity {
 
                     // https://github.com/koush/ion
                     //Ion.with()
-                    //if (documentSnapshot.get(Constants.KEY_PHOTO) == Constants.EMPTY) {
+                    if (documentSnapshot.get(Constants.KEY_PHOTO) == Constants.EMPTY) {
                         Ion.with(mPhotoImageView).load((randomImageUrl()));
-                    //}
-                   //else {
-                        //Ion.with(mPhotoImageView).load((String)documentSnapshot.get(Constants.KEY_PHOTO));
-                    //}
+                    }
+                   else {
+                        Ion.with(mPhotoImageView).load((String)documentSnapshot.get(Constants.KEY_PHOTO));
+                    }
                 }
             }
         });

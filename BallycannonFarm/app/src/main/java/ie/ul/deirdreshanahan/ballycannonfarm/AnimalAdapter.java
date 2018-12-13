@@ -90,7 +90,7 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalView
 		DocumentSnapshot ds = mAnimalSnapshots.get(position);
         String tag = (String)ds.get(Constants.KEY_ANIMAL_TAG);
         String breed = (String)ds.get(Constants.KEY_BREED);
-		//String photo = (String)ds.get(Constants.KEY_PHOTO);
+		String photo = (String)ds.get(Constants.KEY_PHOTO);
 
         holder.mName.setText(tag + " " + breed);
 
@@ -100,12 +100,12 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalView
 
         // https://github.com/koush/ion
         //Ion.with()
-        //if (ds.get(Constants.KEY_PHOTO) == Constants.EMPTY) {
+        if (ds.get(Constants.KEY_PHOTO) == Constants.EMPTY) {
             Ion.with(holder.mImageView).load((randomImageUrl()));
-        //}
-        //else {
-            //Ion.with(holder.mImageView).load(photo);
-        //}
+        }
+        else {
+            Ion.with(holder.mImageView).load(photo);
+        }
 
 
     }
@@ -176,7 +176,7 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalView
 
 
                 public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                    progressChangedValue = progress;
+                    progressChangedValue = 55;
                 }
 
                 public void onStartTrackingTouch(SeekBar seekBar) {

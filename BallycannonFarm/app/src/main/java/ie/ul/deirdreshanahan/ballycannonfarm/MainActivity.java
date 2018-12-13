@@ -18,6 +18,7 @@ import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -88,6 +89,8 @@ public class MainActivity extends AppCompatActivity {
         builder.setTitle("Add an animal");
         final TextView quoteEditText = view.findViewById(R.id.dialog_quote_edittext);
         final TextView movieEditText = view.findViewById(R.id.dialog_movie_edittext);
+        final TextView photoEditText = view.findViewById(R.id.dialog_photo_edittext);
+
         builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -96,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
 
                 mq.put(Constants.KEY_ANIMAL_TAG, quoteEditText.getText().toString());
                 mq.put(Constants.KEY_BREED, movieEditText.getText().toString());
+                mq.put(Constants.KEY_PHOTO, photoEditText.getText().toString());
                 mq.put(Constants.KEY_CREATED, new Date());
                 //DS CODE
                 mq.put(Constants.KEY_USER_ID, FirebaseAuth.getInstance().getCurrentUser().getUid());
