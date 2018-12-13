@@ -36,6 +36,8 @@ public class AnimalDetailActivity extends AppCompatActivity {
 
     private TextView mTagTextView;
     private TextView mBreedTextView;
+    private TextView mNicknameTextView;
+    private TextView mHealthTextView;
     private ImageView mPhotoImageView;
 
     @Override
@@ -46,6 +48,8 @@ public class AnimalDetailActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         mTagTextView = findViewById(R.id.detail_tag);
         mBreedTextView = findViewById(R.id.detail_breed);
+        mNicknameTextView = findViewById(R.id.detail_nickname);
+        mHealthTextView = findViewById(R.id.detail_health);
         mPhotoImageView = findViewById(R.id.detail_photo);
         String docId = getIntent().getStringExtra(Constants.EXTRA_DOC_ID);
 
@@ -63,6 +67,8 @@ public class AnimalDetailActivity extends AppCompatActivity {
                     mDocSnapshot = documentSnapshot;
                     mTagTextView.setText((String)documentSnapshot.get(Constants.KEY_ANIMAL_TAG));
                     mBreedTextView.setText((String)documentSnapshot.get(Constants.KEY_BREED));
+                    mNicknameTextView.setText((String)documentSnapshot.get(Constants.KEY_NAME));
+                    mHealthTextView.setText((String)documentSnapshot.get(Constants.KEY_HEALTH));
 
                     // https://github.com/koush/ion
                     //Ion.with()

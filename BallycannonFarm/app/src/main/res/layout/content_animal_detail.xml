@@ -44,6 +44,36 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Animal Nickname"/>
+
+    <TextView
+        android:id="@+id/detail_nickname"
+        android:text="Enter Animal Nickname here"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Animal Health"/>
+
+    <TextView
+        android:id="@+id/detail_health"
+        android:text="Enter Animal Health here"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="Animal Photo"/>
 	
     <ImageView
