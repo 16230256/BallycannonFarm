@@ -44,11 +44,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Animal Nickname"/>
+        android:text="Animal Family name"/>
 
     <TextView
         android:id="@+id/detail_nickname"
-        android:text="Enter Animal Nickname here"
+        android:text="Enter Family Name here"
         android:textColor="@android:color/black"
         android:textSize="16sp"
         android:layout_margin="20dp"
@@ -63,7 +63,7 @@
 
     <TextView
         android:id="@+id/detail_health"
-        android:text="Enter Animal Health here"
+        android:text="Enter Classification Points here"
         android:textColor="@android:color/black"
         android:textSize="16sp"
         android:layout_margin="20dp"
